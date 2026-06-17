@@ -409,23 +409,19 @@ body{
 
 .school-banner{
 
-    background:
-    linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:black !important;
 
     color:white;
 
     border-radius:22px;
 
-    padding:10px;
+    padding:25px;
 
     text-align:center;
 
     box-shadow:var(--shadow);
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
