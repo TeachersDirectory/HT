@@ -409,8 +409,12 @@ body{
 
 .school-banner{
 
-    background:black !important;
-
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+    
     color:white;
 
     border-radius:22px;
@@ -425,12 +429,12 @@ body{
 
 }
 
-
 .school-banner h2{
     font-size:24px;
-    background:none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 
 .school-banner p{
 
