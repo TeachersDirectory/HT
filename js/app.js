@@ -60,9 +60,14 @@ function renderTeachers(list = teachers) {
 
             <div class="teacher-info">
 
-                <div class="teacher-name">
-                    ${teacher.name}
+                <div class="card-top">
+                     <h3 class="teacher-name">${teacher.name}</h3>
+
+                <button class="edit-btn">
+                     SVG CODE
+                </button>
                 </div>
+
 
                 <div class="teacher-post">
                     ${teacher.designation}
