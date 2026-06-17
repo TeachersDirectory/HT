@@ -63,7 +63,7 @@ function renderTeachers(list = teachers) {
                 <div class="card-top">
                      <h3 class="teacher-name">${teacher.name}</h3>
 
-                <button class="edit-btn" onclick="goToEdit(${teacher.id})>
+                <button class="edit-btn" onclick="goToEdit(${teacher.id})">
                      <svg viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
