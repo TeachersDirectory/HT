@@ -486,6 +486,9 @@ body{
     margin:0 auto;
     height:46px;
 
+    background:red !important;
+    width:50% !important;
+
     border:none;
     border-radius:10px;
 
