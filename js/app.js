@@ -123,3 +123,23 @@ function goToEdit(id) {
 document.addEventListener("DOMContentLoaded", function () {
     renderTeachers();
 });
+
+// ======================
+// DEVELOPER PAGE
+// ======================
+
+function openDeveloperPage(){
+
+    document.getElementById("homePage").style.display = "none";
+
+    document.getElementById("developerPage").style.display = "block";
+
+}
+
+function closeDeveloperPage(){
+
+    document.getElementById("developerPage").style.display = "none";
+
+    document.getElementById("homePage").style.display = "block";
+
+}
