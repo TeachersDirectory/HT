@@ -20,16 +20,17 @@
         প্রধান শিক্ষক ডিরেক্টরি
     </h1>
 
-    <a href="developer.html" 
-       class="header-icon">
-         ℹ️
+    <a href="#"
+       class="header-icon"
+       onclick="openDeveloperPage()">
+       ℹ️
     </a>
 
 </header>
 
 
-<div class="container">
-
+<div class="container" id="homePage">
+    
     <div class="search-box">
 
         <input
@@ -40,6 +41,38 @@
 
     </div>
 
+
+
+    <div id="developerPage" style="display:none;">
+
+    <div class="profile-section">
+
+        <img
+            src="images/avatar.png"
+            alt="Developer"
+            class="avatar">
+
+        <h2 class="dev-name">
+            মোঃ নাফিউল ইসলাম ফাহাদ
+        </h2>
+
+        <div class="dev-post">
+            সহকারী শিক্ষক
+        </div>
+
+        <div class="dev-school">
+            পশ্চিম চরলাঠিমারা সরকারি প্রাথমিক বিদ্যালয়
+        </div>
+
+        <div class="dev-extra">
+            <i>আইসিটি বিষয়ক সম্পাদক, প্রাথমিক শিক্ষক সমিতি, পাথরঘাটা, বরগুনা।</i>
+        </div>
+
+    </div>
+
+    </div>
+
+    
 
     <div id="teacherList"></div>
 
