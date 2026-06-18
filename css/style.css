@@ -410,6 +410,24 @@ body{
 
 }
 
+.back-btn{
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    cursor:pointer;
+
+}
+
 
 /* ==========================
    FORM PAGE
