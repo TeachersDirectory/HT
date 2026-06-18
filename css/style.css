@@ -283,9 +283,11 @@ body{
 
 .edit-btn{
 
-    width:30px;
+    width:28px;
 
-    height:30px;
+    height:28px;
+
+   margin-right:10px;
 
     border-radius:8px;
 
@@ -296,6 +298,7 @@ body{
     cursor:pointer;
 
     font-size:14px;
+   
 }
 
 
