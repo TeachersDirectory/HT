@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function openDeveloperPage(){
 
+    history.pushState({page:"developer"}, "", "#developer");
+
     document.getElementById("homePage").style.display = "none";
 
     document.getElementById("developerPage").style.display = "block";
@@ -143,3 +145,13 @@ function closeDeveloperPage(){
     document.getElementById("homePage").style.display = "block";
 
 }
+
+window.addEventListener("popstate", function(){
+
+    if(document.getElementById("developerPage").style.display === "block"){
+
+        closeDeveloperPage();
+
+    }
+
+});
