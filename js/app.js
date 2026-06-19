@@ -4,6 +4,8 @@ history.scrollRestoration = "manual";
 // SEARCH
 // ======================
 
+let searchPushed = false;
+
 function searchTeachers() {
     const searchInput = document
         .getElementById("searchInput")
@@ -12,10 +14,14 @@ function searchTeachers() {
         .trim()
         .normalize("NFC");
 
-    if(searchInput.length > 0){
-        history.replaceState({page: "search"}, "");
-    } else {
-        history.replaceState({page: "home"}, "");
+    // শুধু প্রথমবার push করো, বারবার না
+    if(searchInput.length > 0 && !searchPushed){
+        searchPushed = true;
+        history.pushState({page: "search"}, "");
+    }
+
+    if(searchInput.length === 0){
+        searchPushed = false;
     }
 
     document.getElementById("clearBtn").style.display = 
@@ -170,7 +176,7 @@ window.addEventListener("popstate", function(event) {
         return;
     }
 
-    // Search clear করো
+    searchPushed = false;
     document.getElementById("searchInput").value = "";
     document.getElementById("clearBtn").style.display = "none";
     renderTeachers();
