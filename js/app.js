@@ -144,11 +144,14 @@ function openDeveloperPage(){
 }
 
 function closeDeveloperPage(){
-    document.querySelector(".header").style.display = "block";
+    document.querySelector(".header").style.display = "flex"; // "block" এর বদলে "flex"
     document.querySelector(".container").style.display = "block";
     document.getElementById("developerPage").style.display = "none";
 
-    window.scrollTo(0, 0);
+    // scroll রিসেট একটু delay দিয়ে করুন
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
 }
 
 window.addEventListener("popstate", function(event) {
