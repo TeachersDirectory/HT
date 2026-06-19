@@ -1,3 +1,5 @@
+history.scrollRestoration = "manual";
+
 // ======================
 // SEARCH
 // ======================
