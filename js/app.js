@@ -116,17 +116,6 @@ function goToEdit(id) {
     window.location.href = `edit.html?id=${id}`;
 }
 
-// ======================
-// INITIAL LOAD
-// ======================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    renderTeachers();
-
-    history.replaceState({page:"home"}, "", "#home");
-
-});
 
 // ======================
 // DEVELOPER PAGE
@@ -135,14 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
 function openDeveloperPage(){
 
     document.getElementById("homePage").style.display = "none";
+
     document.getElementById("developerPage").style.display = "block";
 
-    history.pushState({page:"developer"}, "");
 }
 
 function closeDeveloperPage(){
 
     document.getElementById("developerPage").style.display = "none";
+
     document.getElementById("homePage").style.display = "block";
 
 }
