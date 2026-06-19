@@ -9,16 +9,22 @@ function searchTeachers() {
         .getElementById("searchInput")
         .value
         .toLowerCase()
-        .trim();
+        .trim()
+        .normalize("NFC");
 
-    // Clear বাটন show/hide
+    if(searchInput.length > 0){
+        history.replaceState({page: "search"}, "");
+    } else {
+        history.replaceState({page: "home"}, "");
+    }
+
     document.getElementById("clearBtn").style.display = 
-        searchInput.length > 0 ? "block" : "none";
+        searchInput.length > 0 ? "flex" : "none";
 
     const filteredTeachers = teachers.filter(teacher => {
         return (
-            teacher.name.toLowerCase().includes(searchInput) ||
-            teacher.school.toLowerCase().includes(searchInput) ||
+            teacher.name.toLowerCase().normalize("NFC").includes(searchInput) ||
+            teacher.school.toLowerCase().normalize("NFC").includes(searchInput) ||
             teacher.phone.includes(searchInput)
         );
     });
@@ -31,6 +37,7 @@ function clearSearch() {
     document.getElementById("clearBtn").style.display = "none";
     renderTeachers();
 }
+
 // ======================
 // CARD RENDER
 // ======================
@@ -49,7 +56,7 @@ function renderTeachers(list = teachers) {
             <div class="teacher-card">
                 <div class="teacher-info">
                     <div class="teacher-name">
-                        কোনো তথ্য পাওয়া যায়নি
+                        কোনো তথ্য পাওয়া যায়নি
                     </div>
                 </div>
             </div>
@@ -122,9 +129,7 @@ function renderTeachers(list = teachers) {
 // ======================
 
 document.addEventListener("DOMContentLoaded", function () {
-
     renderTeachers();
-
 });
 
 
@@ -150,11 +155,10 @@ function openDeveloperPage(){
 }
 
 function closeDeveloperPage(){
-    document.querySelector(".header").style.display = "flex"; // "block" এর বদলে "flex"
+    document.querySelector(".header").style.display = "flex";
     document.querySelector(".container").style.display = "block";
     document.getElementById("developerPage").style.display = "none";
 
-    // scroll রিসেট একটু delay দিয়ে করুন
     setTimeout(() => {
         window.scrollTo(0, 0);
     }, 10);
@@ -167,8 +171,7 @@ window.addEventListener("popstate", function(event) {
     }
 
     // Search clear করো
-    searchActive = false;
     document.getElementById("searchInput").value = "";
+    document.getElementById("clearBtn").style.display = "none";
     renderTeachers();
 });
-
