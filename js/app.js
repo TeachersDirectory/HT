@@ -134,28 +134,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function openDeveloperPage(){
 
-    history.pushState({page:"developer"}, "", "#developer");
-
     document.getElementById("homePage").style.display = "none";
-
     document.getElementById("developerPage").style.display = "block";
 
+    history.pushState({page:"developer"}, "");
 }
 
 function closeDeveloperPage(){
 
     document.getElementById("developerPage").style.display = "none";
-
     document.getElementById("homePage").style.display = "block";
 
 }
 
-window.addEventListener("popstate", function(event){
+window.onpopstate = function(){
 
-    if(event.state && event.state.page === "home"){
+    if(document.getElementById("developerPage").style.display === "block"){
 
-        closeDeveloperPage();
-
+        document.getElementById("developerPage").style.display = "none";
+        document.getElementById("homePage").style.display = "block";
     }
 
-});
+};
