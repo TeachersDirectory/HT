@@ -5,6 +5,7 @@ history.scrollRestoration = "manual";
 // ======================
 
 let searchPushed = false;
+let searchTimer = null;
 
 function searchTeachers() {
     const searchInput = document
@@ -14,7 +15,9 @@ function searchTeachers() {
         .trim()
         .normalize("NFC");
 
-    // শুধু প্রথমবার push করো, বারবার না
+    document.getElementById("clearBtn").style.display = 
+        searchInput.length > 0 ? "flex" : "none";
+
     if(searchInput.length > 0 && !searchPushed){
         searchPushed = true;
         history.pushState({page: "search"}, "");
@@ -24,18 +27,20 @@ function searchTeachers() {
         searchPushed = false;
     }
 
-    document.getElementById("clearBtn").style.display = 
-        searchInput.length > 0 ? "flex" : "none";
+    // আগের timer বাতিল করো
+    clearTimeout(searchTimer);
 
-    const filteredTeachers = teachers.filter(teacher => {
-        return (
-            teacher.name.toLowerCase().normalize("NFC").includes(searchInput) ||
-            teacher.school.toLowerCase().normalize("NFC").includes(searchInput) ||
-            teacher.phone.includes(searchInput)
-        );
-    });
-
-    renderTeachers(filteredTeachers);
+    // ১৫০ms পরে search করো
+    searchTimer = setTimeout(() => {
+        const filteredTeachers = teachers.filter(teacher => {
+            return (
+                teacher.name.toLowerCase().normalize("NFC").includes(searchInput) ||
+                teacher.school.toLowerCase().normalize("NFC").includes(searchInput) ||
+                teacher.phone.includes(searchInput)
+            );
+        });
+        renderTeachers(filteredTeachers);
+    }, 150);
 }
 
 function clearSearch() {
