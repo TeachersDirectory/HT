@@ -316,34 +316,23 @@ body{
    
 }
 
-
 .call-btn{
-
-    width:44px;
-
-    height:44px;
-
+    width:48px;
+    height:48px;
     border-radius:50%;
-
-    border:1px solid #D1D5DB;
-
-    background:#F0FDF8;
-
+    border:none;
+    background:#E8F5F2;
     color:var(--primary);
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-decoration:none;
-
-    font-size:18px;
-
-    box-shadow:var(--shadow);
-
+    font-size:20px;
+    box-shadow:
+        0 6px 0 #a8d5cb,
+        0 8px 10px rgba(0,0,0,0.2);
 }
+
 
 
 /* ==========================
