@@ -145,10 +145,15 @@ function closeDeveloperPage(){
     document.querySelector(".header").style.display = "block";
     document.querySelector(".container").style.display = "block";
     document.getElementById("developerPage").style.display = "none";
+
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 window.addEventListener("popstate", function(event) {
     closeDeveloperPage();
+    window.scrollTo(0, 0);
 });
 
 
