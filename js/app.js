@@ -155,7 +155,13 @@ function closeDeveloperPage(){
 }
 
 window.addEventListener("popstate", function(event) {
-    closeDeveloperPage();
+    // Developer page খোলা থাকলে বন্ধ করো
+    if(document.getElementById("developerPage").style.display === "block"){
+        closeDeveloperPage();
+    }
+    
+    // Search বক্স clear করে সব contact দেখাও
+    document.getElementById("searchInput").value = "";
+    renderTeachers();
 });
-
 
