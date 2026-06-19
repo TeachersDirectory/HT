@@ -108,6 +108,18 @@ function renderTeachers(list = teachers) {
     container.innerHTML = html;
 }
 
+
+// ======================
+// INITIAL LOAD
+// ======================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    renderTeachers();
+
+});
+
+
 // ======================
 // EDIT NAVIGATION
 // ======================
