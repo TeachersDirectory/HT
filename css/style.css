@@ -303,26 +303,24 @@ body{
 
 
 .edit-btn{
-
-    width:28px;
-
-    height:28px;
-
+    width:32px;
+    height:32px;
     margin-right:14px;
-
-    margin-top: -4px; 
-
+    margin-top: -4px;
     border-radius:8px;
-
     border:none;
-
-    background:#F1F3F5;
-
+    background:linear-gradient(145deg, #f8f9fa, #e9ecef);
     cursor:pointer;
-
     font-size:14px;
-   
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:
+        0 4px 0 #ced4da,
+        0 5px 8px rgba(0,0,0,0.12),
+        inset 0 1px 2px rgba(255,255,255,1);
 }
+
 
 .call-btn{
     width:48px;
