@@ -471,19 +471,16 @@ body{
 .form-card {
     background: white;
     border-radius: 18px;
-    padding: 15px;
+    padding: 12px 15px;
     box-shadow: var(--shadow);
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
-
 
 .label{
     color:var(--primary);
-    font-size:13px;
+    font-size:15px;
     font-weight:600;
-    margin-bottom:6px;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
+    margin-bottom:4px;
 }
 
 
